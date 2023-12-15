@@ -1,0 +1,63 @@
+@startuml
+title 'Game part of the system'
+left to right direction
+
+class IGame {
+
+}
+
+class Game {
+
+}
+
+class SdlGame {
+
+}
+
+class SfmlGame {
+
+}
+
+class NcursesGame {
+
+}
+
+' coordinate entity
+class Coordinate {
+  -int x
+  -int y
+}
+
+' dimension entity
+class Dimension {
+  -size_t width
+  -size_t height
+}
+
+' structure asset of the game
+class InfoEntity {
+  -Dimension dimension
+  -Coordinate coordinate
+  ' path the image
+  -std::string path
+  ' id of the asset in the map
+  -size_t id
+  ' collission on click
+  -onClick
+  ' collission with other entity
+  -onCollision
+}
+
+' hardcode map directly in the .hpp or make json/txt file
+class Map {
+}
+
+Cordinate .. InfoEntity
+Dimension .. InfoEntity
+
+IGame -- Game
+Game -- SdlGame
+Game -- SfmlGame
+Game -- NcursesGame
+
+@enduml

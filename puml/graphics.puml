@@ -1,0 +1,172 @@
+@startuml
+title "Graphics parts of the system"
+left to right direction
+
+interface IMusic {
+
+}
+
+class Music {
+
+}
+
+class SfmlMusic {
+
+}
+
+class NcursesMusic {
+
+}
+
+class SdlMusic {
+
+}
+
+interface IGfxError {
+
+}
+
+class GfxError {
+
+}
+
+class SfmlError {
+}
+
+class NcursesError {
+}
+
+class SdlError {
+}
+
+' Display the game
+interface IDisplay {
+  +displayEntity()
+  +displayScene()
+  +displayScore()
+}
+
+class Display {
+}
+
+class SfmlDisplay {
+}
+
+class NcursesDisplay {
+}
+
+class SdlDisplay {
+}
+
+' event game
+interface IEvent {
+  ' event loop
+  +runEvent() ' loop event
+  ' get event
+  +getEvent() ' get key user
+}
+
+class Event {
+}
+
+class SfmlEvent {
+}
+
+class NcursesEvent {
+}
+
+class SdlEvent {
+}
+
+' create entity
+interface ITexture {
+  +createTexture()
+  +createMap()
+}
+
+class Texture {
+}
+
+' create entity and set texture to sprite
+class SfmlTexture {
+}
+
+' create entity and set character
+class NcursesTexture {
+}
+
+' create entity and set character
+class SdlTexture {
+}
+
+' game state
+interface IGameController {
+  +init(): void
+  +run(): void
+  +exit(): void
+}
+
+class GameController {
+}
+
+class SfmlController {
+}
+
+class NcursesController {
+}
+
+
+class SdlController {
+}
+
+
+' InputHandler change de state of the game
+IGameController -- GameController
+GameController -- SfmlController
+GameController -- NcursesController
+GameController -- SdlController
+
+Event -- IEvent
+SfmlEvent <.. Event
+NcursesEvent <.. Event
+SdlEvent <.. Event
+
+Texture -- ITexture
+SfmlTexture <.. Texture
+NcursesTexture <.. Texture
+SdlTexture <.. Texture
+
+Display -- IDisplay
+SfmlDisplay <.. Display
+NcursesDisplay <.. Display
+SdlDisplay <.. Display
+
+Music -- IMusic
+SfmlMusic <.. Music
+NcursesMusic <.. Music
+SdlMusic <.. Music
+
+GfxError -- IGfxError
+SfmlError <.. GfxError
+NcursesError <.. GfxError
+SdlError <.. GfxError
+
+SfmlController <--- SfmlTexture
+SfmlController <--- SfmlEvent
+SfmlController <--- SfmlDisplay
+SfmlController <--- SfmlMusic
+SfmlController <--- SfmlError
+
+NcursesController <--- NcursesTexture
+NcursesController <--- NcursesEvent
+NcursesController <--- NcursesDisplay
+NcursesController <--- NcursesError
+NcursesController <--- NcursesMusic
+
+SdlController <--- SdlTexture
+SdlController <--- SdlEvent
+SdlController <--- SdlDisplay
+SdlController <--- SdlMusic
+SdlController <--- SdlError
+
+@enduml

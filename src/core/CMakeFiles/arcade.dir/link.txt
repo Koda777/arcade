@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/arcade.dir/Library/src/Library.cpp.o CMakeFiles/arcade.dir/parser/src/Parser.cpp.o CMakeFiles/arcade.dir/Core.cpp.o CMakeFiles/arcade.dir/__/main.cpp.o -o ../../arcade 

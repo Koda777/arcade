@@ -1,0 +1,23 @@
+@startuml
+title "General plan of the system"
+
+class Core {
+
+}
+
+class Game {
+
+}
+
+class Graphics {
+
+}
+
+class Programm {
+
+}
+
+Programm ---> Game
+Programm ---> Graphics
+Programm ---> Core
+@enduml

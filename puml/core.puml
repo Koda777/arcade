@@ -1,0 +1,15 @@
+@startuml
+title 'Core part of the system'
+
+class DynamicLibrary {
+  ' Load the library and return function that return a class instance
+  +createGfx()
+}
+
+class Error {
+  ' check if the graphics library is loaded
+  +isGfx()
+  ' check if the game library is loaded
+  +isGame() 
+}
+@enduml

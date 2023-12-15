@@ -1,0 +1,93 @@
+@startuml
+title "Graphics parts of the system"
+
+' event game
+interface IEvent {
+  +getEvent()
+  +getKeyInput()
+}
+
+' create entity
+interface IEntity {
+  +createEntity()
+}
+
+class Entity {
+  +createEntity()
+}
+
+' create entity and set texture to sprite
+class SfmlEntity {
+  +createEntity()
+}
+
+' create entity and set character
+class NcursesEntity {
+  +createEntity()
+}
+
+class Event {
+  +getEvent(): IEvent
+  +getKeyInput()
+  +checkCollission()
+}
+
+class SfmlEvent {
+  +getEvent(): IEvent
+  +getKeyInput()
+}
+
+class NcursesEvent {
+  +getEvent(): IEvent
+  +getKeyInput()
+}
+
+' game state
+interface IGameController {
+  +createWindow()
+  +nextGame(): void
+  +restartGame(): void
+  +goBackToMenu(): void
+  +save(): void
+  +exit(): void
+}
+
+class GameController {
+  +createWindow()
+  +nextGame(): void
+  +restartGame(): void
+  +goBackToMenu(): void
+  +save(): void
+  +exit(): void
+}
+
+class SfmlController {
+  +createWindow()
+  +nextGame(): void
+  +restartGame(): void
+  +goBackToMenu(): void
+  +save(): void
+  +exit(): void
+}
+
+class NcursesController {
+  +createWindow()
+  +nextGame(): void
+  +restartGame(): void
+  +goBackToMenu(): void
+  +save(): void
+  +exit(): void
+}
+
+' InputHandler change de state of the game
+IGameController -- GameController
+GameController -- SfmlController
+GameController -- NcursesController
+
+IEvent -- Event
+Event -- SfmlEvent
+Event -- NcursesEvent
+
+Library -- Main
+
+@enduml
