@@ -1,8 +1,10 @@
-Group leader: Alexis Faure
+# Epitech Arcade Project
 
-Mail: alexis.faure@epitech.eu
+## Introduction
+Welcome to the Epitech Arcade project! This project is a part of the Epitech curriculum and aims to create a simple arcade game engine that can run various games.
 
-
-Other group leader: Quentin Charpentier
-
-Mail: quentin.charpentier@epitech.eu
+## Features
+- Cross-platform support
+- Dynamic loading of games and graphics libraries
+- Text and graphical user interfaces
+- Simple game loop and event handling
